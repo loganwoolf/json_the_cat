@@ -6,8 +6,9 @@ const endpoint = `https://api.thecatapi.com/v1/breeds/search?q=${breedName}`;
 
 request(endpoint, (error, response, body) => {
   if (error) {
-    console.log(`error: ${error}`);
-    console.log(`response : ${response}`);
+    // console.log(error);
+    console.log(`The call to "${error.hostname}" returned the error: ${error.code}`);
+    error.code === 'ENOTFOUND' && console.log('Check the URL or it may be offline.');
     process.exit();
   }
 
