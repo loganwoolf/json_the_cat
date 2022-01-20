@@ -1,6 +1,8 @@
 const request = require('request');
 
-const endpoint = 'https://api.thecatapi.com/v1/breeds/search?q=sib';
+
+const breedName = process.argv[2];
+const endpoint = `https://api.thecatapi.com/v1/breeds/search?q=${breedName}`;
 
 request(endpoint, (error, response, body) => {
 
