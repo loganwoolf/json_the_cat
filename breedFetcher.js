@@ -16,7 +16,7 @@ const fetchBreedDescription = (breedName, callback) => {
         callback('Error: Invalid breed');
       }
       if (catData) {
-        callback(null, `${catData.name}:\n\n ${catData.description}\n`);
+        callback(null, catData.description);
       }
     }
   );
